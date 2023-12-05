@@ -15,6 +15,13 @@ namespace Lesson4
         public List<Car> OwnedCars = new List<Car>();
         public List<Bike> OwnedBikes = new List<Bike>();
 
+        public Person(string name, string surname, int age)
+        {
+            Name = name;
+            Surname = surname;
+            Age = age;
+        }
+
         public void BuyCar(Car car)
         {
             OwnedCars.Add(car);
