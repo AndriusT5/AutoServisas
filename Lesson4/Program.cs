@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Lesson4
 {
@@ -12,15 +13,15 @@ namespace Lesson4
         {
 
             #region Cars
-            Car car1 = new Car();
-            car1.Make = "Volvo";
-            car1.Model = "S60";
-            car1.MadeYear = 2011;
-            car1.Color = "Black";
-            car1.Id = 1;
-            car1.FuelType = FuelType.Petrol;
+            Car car1 = new Car("Volvo", "S60", "12345678")
+            {
+                MadeYear = 2011,
+                Color = "Black",
+                Id = 1,
+                FuelType = FuelType.Petrol
+            };
 
-            Car car2 = new Car() { Make = "BMW", Model = "530", Color = "White", Id = 2, MadeYear = 2017, FuelType = FuelType.Gas };
+            Car car2 = new Car("BMW", "530", "1230") { Color = "White", Id = 2, MadeYear = 2017, FuelType = FuelType.Gas };
 
             Car car3 = new Car()
             {
@@ -39,11 +40,11 @@ namespace Lesson4
             car1.Color = "Green";
             #endregion
 
-            Person person1 = new Person() { Name = "Jonas", Surname = "Jonaitis", Age = 33 };
+            Person person1 = new Person("Jonas", "Jonaitis", 33);
             person1.BuyCar(car2);
             person1.BuyCar(car3);
 
-            Person person2 = new Person() { Name = "Antanas", Surname = "Antanaitis", Age = 24 };
+            Person person2 = new Person("Antanas", "Antanaitis", 24);
             person2.BuyCar(car1);
             person2.BuyCar(car6);
             //car1.StartEngine();
